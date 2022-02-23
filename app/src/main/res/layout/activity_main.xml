@@ -61,15 +61,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="64dp"
-            android:enabled="false"
-            android:text="Sign In"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/access_token"
-            app:layout_constraintVertical_bias="0.2"
+            android:text="Click me"
             android:textColor="@color/white"
             android:backgroundTint="@color/blue"/>
 
