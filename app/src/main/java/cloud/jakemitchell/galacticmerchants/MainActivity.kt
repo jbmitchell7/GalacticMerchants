@@ -1,11 +1,10 @@
 package cloud.jakemitchell.galacticmerchants
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import cloud.jakemitchell.galacticmerchants.network.SpaceTradersApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -19,21 +18,21 @@ class MainActivity : AppCompatActivity() {
         GlobalScope.launch {
             try {
                 val result = SpaceTradersApi.retrofitService.getGameStatus()
-                val loginBtn: Button = findViewById(R.id.login)
+                val loginBtn = findViewById<Button>(R.id.login)
+                val tokenText = findViewById<EditText>(R.id.access_token)
+                val userText = findViewById<EditText>(R.id.crew_name)
+
+                val pref = getPreferences(Context.MODE_PRIVATE)
+                val edit = pref.edit()
                 loginBtn.setOnClickListener {
                     loginBtn.text = result.status
+                    edit.putString("TOKEN", tokenText.text.toString())
+                    edit.putString("USER", userText.text.toString())
+                    edit.apply()
                 }
             } catch (e: Exception) {
                 println("Failed")
             }
         }
-    }
-
-    fun onLogin(view: View) {
-        val pref = getPreferences(Context.MODE_PRIVATE)
-        val editor = pref.edit()
-        editor.putString("USER", findViewById(R.id.crew_name))
-        editor.putString("TOKEN", findViewById(R.id.access_token))
-        editor.apply()
     }
 }
