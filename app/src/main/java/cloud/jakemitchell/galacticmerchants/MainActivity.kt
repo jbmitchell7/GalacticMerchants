@@ -1,8 +1,10 @@
 package cloud.jakemitchell.galacticmerchants
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import cloud.jakemitchell.galacticmerchants.network.SpaceTradersApi
 import kotlinx.coroutines.GlobalScope
@@ -25,5 +27,13 @@ class MainActivity : AppCompatActivity() {
                 println("Failed")
             }
         }
+    }
+
+    fun onLogin(view: View) {
+        val pref = getPreferences(Context.MODE_PRIVATE)
+        val editor = pref.edit()
+        editor.putString("USER", findViewById(R.id.crew_name))
+        editor.putString("TOKEN", findViewById(R.id.access_token))
+        editor.apply()
     }
 }

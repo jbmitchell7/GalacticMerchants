@@ -66,6 +66,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/access_token"
             android:text="Click me"
+            android:onClick="onLogin"
             android:textColor="@color/white"
             android:backgroundTint="@color/blue"/>
 
