@@ -28,7 +28,6 @@
             android:id="@+id/crew_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:autofillHints="@string/prompt_email"
             android:background="@color/white"
             android:layout_marginTop="100dp"
             android:hint="Name of your Crew"
@@ -36,14 +35,15 @@
             android:selectAllOnFocus="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/greeting_text" />
+            app:layout_constraintTop_toBottomOf="@+id/greeting_text"
+            android:padding="15dp"
+            android:layout_marginHorizontal="20dp"/>
 
         <EditText
             android:id="@+id/access_token"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:autofillHints="@string/prompt_password"
             android:hint="Access Token"
             android:imeActionLabel="@string/action_sign_in_short"
             android:imeOptions="actionDone"
@@ -52,7 +52,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/crew_name"
-            android:background="@color/white"/>
+            android:background="@color/white"
+            android:padding="15dp"
+            android:layout_marginHorizontal="20dp"/>
 
         <Button
             android:id="@+id/login"
@@ -62,13 +64,14 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="64dp"
             android:enabled="false"
-            android:text="@string/action_sign_in"
+            android:text="Sign In"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/access_token"
             app:layout_constraintVertical_bias="0.2"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:backgroundTint="@color/blue"/>
 
         <ProgressBar
             android:id="@+id/loading"
