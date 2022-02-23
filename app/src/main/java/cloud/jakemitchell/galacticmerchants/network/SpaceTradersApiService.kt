@@ -18,7 +18,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface SpaceTradersApiService {
-    @GET("gameStatus")
+    @GET("/game/status")
     suspend fun getGameStatus(): String
 }
 
