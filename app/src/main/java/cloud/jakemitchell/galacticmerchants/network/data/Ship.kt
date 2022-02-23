@@ -2,7 +2,7 @@ package cloud.jakemitchell.galacticmerchants.network.data
 
 import com.squareup.moshi.Json
 
-data class Ships(
+data class Ship(
     val cargo: List<Cargo>,
     @Json(name = "class") val shipClass: String,
     val flightPlanId: String,

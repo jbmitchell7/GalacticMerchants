@@ -1,6 +1,6 @@
 package cloud.jakemitchell.galacticmerchants.network.data
 
-data class Loans(
+data class Loan(
     val due: String,
     val id: String,
     val repaymentAmount: Int,

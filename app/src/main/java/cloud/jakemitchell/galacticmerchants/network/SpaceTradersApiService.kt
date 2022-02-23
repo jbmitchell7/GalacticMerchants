@@ -1,7 +1,9 @@
 package cloud.jakemitchell.galacticmerchants.network
 
 import cloud.jakemitchell.galacticmerchants.network.data.GameStatus
-import cloud.jakemitchell.galacticmerchants.network.data.Username
+import cloud.jakemitchell.galacticmerchants.network.data.Loan
+import cloud.jakemitchell.galacticmerchants.network.data.Ship
+import cloud.jakemitchell.galacticmerchants.network.data.UserData
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -25,8 +27,17 @@ interface SpaceTradersApiService {
     @GET("/game/status")
     suspend fun getGameStatus(): GameStatus
 
-    @POST("/users/:username/claim")
-    suspend fun createUsername(): List<Username>
+    @GET("/my/loans")
+    suspend fun getLoans(): List<Loan>
+
+    @GET("/my/ships")
+    suspend fun getMyShips(): List<Ship>
+
+    @GET("my/ships/{shipId}")
+    suspend fun getOneShip(): Ship
+
+    @POST("/users/{username}/claim")
+    suspend fun createUsername(): List<UserData>
 }
 
 object SpaceTradersApi {
