@@ -1,5 +1,6 @@
 package cloud.jakemitchell.galacticmerchants
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,12 +13,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val statusApi = RetrofitHelper.getInstance().create(SpaceTradersApiService::class.java)
-        GlobalScope.launch {
-            val result = statusApi.getGameStatus()
-                if (result != null)
-                    Log.d("Game Status: ", result.toString())
-        }
+        
     }
 }
