@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //TODO change global to view model scope
         GlobalScope.launch {
             try {
                 val result = SpaceTradersApi.retrofitService.getGameStatus()
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
                 val pref = getPreferences(Context.MODE_PRIVATE)
                 val edit = pref.edit()
                 loginBtn.setOnClickListener {
+                    //will remove eventually
                     loginBtn.text = result.status
                     edit.putString("TOKEN", tokenText.text.toString())
                     edit.putString("USER", userText.text.toString())
