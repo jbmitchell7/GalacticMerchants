@@ -1,4 +1,4 @@
-package cloud.jakemitchell.galacticmerchants.login
+package cloud.jakemitchell.galacticmerchants.ui.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

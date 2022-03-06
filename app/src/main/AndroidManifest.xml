@@ -12,12 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GalacticMerchants">
         <activity
-            android:name=".NavigationActivity"
-            android:exported="false"
-            android:label="@string/title_activity_navigation" />
-        <activity
-            android:name=".login.LoginActivity"
-            android:exported="true">
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
