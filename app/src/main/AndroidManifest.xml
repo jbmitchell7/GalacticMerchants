@@ -12,9 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GalacticMerchants">
         <activity
-            android:name=".DashboardActivity"
+            android:name=".NavigationActivity"
             android:exported="false"
-            android:label="@string/title_activity_dashboard" />
+            android:label="@string/title_activity_navigation" />
         <activity
             android:name=".login.LoginActivity"
             android:exported="true">

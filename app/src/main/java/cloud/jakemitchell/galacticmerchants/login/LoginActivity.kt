@@ -2,11 +2,13 @@ package cloud.jakemitchell.galacticmerchants.login
 
 import android.os.Bundle
 import android.content.Context
+import android.content.Intent
 import androidx.activity.viewModels
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import cloud.jakemitchell.galacticmerchants.NavigationActivity
 import cloud.jakemitchell.galacticmerchants.R
 import cloud.jakemitchell.galacticmerchants.network.data.GameStatus
 
@@ -26,8 +28,8 @@ class LoginActivity : AppCompatActivity() {
             loginBtn.setOnClickListener {
                 //will remove eventually
                 loginBtn.text = gameStatus.status
-                edit.putString("TOKEN", tokenText.text.toString())
-                edit.putString("USER", userText.text.toString())
+                val intent = Intent(this, NavigationActivity::class.java)
+                startActivity(intent)
                 edit.apply()
             }
         }
