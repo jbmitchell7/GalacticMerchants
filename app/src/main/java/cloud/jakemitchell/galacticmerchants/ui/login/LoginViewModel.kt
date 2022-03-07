@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 import java.lang.Exception
 
 class LoginViewModel : ViewModel() {
-
     private val _gameStatus = MutableLiveData<GameStatus>()
 
     val gameStatus: LiveData<GameStatus> = _gameStatus
