@@ -1,26 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="GalacticMerchants" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/blue</item>
-        <item name="colorPrimaryVariant">@color/magenta</item>
-        <item name="colorOnPrimary">@color/yellow</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/green</item>
-        <item name="colorSecondaryVariant">@color/magenta</item>
-        <item name="colorOnSecondary">@color/black</item>
+    <style name="GalacticMerchants" parent="Theme.MaterialComponents.DayNight">
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/black_theme</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/blue</item>
+        <!-- Text Fields -->
         <item name="android:textColor">@color/yellow</item>
         <item name="android:textColorHint">@color/gray</item>
+        <!-- Background color -->
         <item name="android:windowBackground">@color/black_theme</item>
+        <!-- sets action bar color -->
+        <item name="colorSurface">@color/black_theme</item>
     </style>
-    <style name="Login" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
+    <style name="GalacticMerchants.Login" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- disables action bar -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!--colors-->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/blue</item>
         <item name="colorPrimary">@color/blue</item>
         <item name="android:textColor">@color/yellow</item>
         <item name="android:textColorHint">@color/gray</item>

@@ -13,7 +13,7 @@
     <string name="login_username_hint">Username</string>
     <string name="login_token_hint">Your Access Token</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_systems">Systems</string>
+    <string name="title_loans">Loans</string>
 </resources>

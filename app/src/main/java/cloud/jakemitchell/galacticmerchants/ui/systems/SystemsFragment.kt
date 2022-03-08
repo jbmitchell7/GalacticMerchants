@@ -1,4 +1,4 @@
-package cloud.jakemitchell.galacticmerchants.ui.dashboard
+package cloud.jakemitchell.galacticmerchants.ui.systems
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import cloud.jakemitchell.galacticmerchants.databinding.FragmentDashboardBinding
+import cloud.jakemitchell.galacticmerchants.databinding.FragmentSystemsBinding
 
-class DashboardFragment : Fragment() {
-
-    private var _binding: FragmentDashboardBinding? = null
+class SystemsFragment : Fragment() {
+    private var _binding: FragmentSystemsBinding? = null
 
     private val binding get() = _binding!!
 
@@ -20,14 +19,14 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this)[DashboardViewModel::class.java]
+        val systemsViewModel =
+            ViewModelProvider(this)[SystemsViewModel::class.java]
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentSystemsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textSystems
+        systemsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

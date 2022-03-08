@@ -3,23 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="cloud.jakemitchell.galacticmerchants.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@+id/navigation_dashboard">
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="cloud.jakemitchell.galacticmerchants.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_Ships"
+            app:destination="@id/Ships" />
+    </fragment>
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="cloud.jakemitchell.galacticmerchants.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+    <fragment android:id="@+id/navigation_loans"
+        android:name="cloud.jakemitchell.galacticmerchants.ui.loans.LoansFragment"
+        android:label="@string/title_loans"
+        tools:layout="@layout/fragment_loans"/>
+
+    <fragment android:id="@+id/navigation_systems"
+        android:name="cloud.jakemitchell.galacticmerchants.ui.systems.SystemsFragment"
+        android:label="@string/title_systems"
+        tools:layout="@layout/fragment_systems">
+        <action
+            android:id="@+id/action_placeholder4_to_Locations"
+            app:destination="@id/Locations" />
+        <action
+            android:id="@+id/action_placeholder4_to_Ships"
+            app:destination="@id/Ships" />
+    </fragment>
+
+    <fragment android:id="@+id/Locations" />
+
+    <fragment android:id="@+id/Ships" />
+
+    <!-- placeholder for login activity -->
+    <fragment android:id="@+id/Login" >
+        <action
+            android:id="@+id/action_Login_to_Loans"
+            app:destination="@id/navigation_loans" />
+        <action
+            android:id="@+id/action_Login_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
 </navigation>

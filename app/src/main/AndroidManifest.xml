@@ -19,7 +19,7 @@
         <activity
             android:name=".login.LoginActivity"
             android:exported="true"
-            android:theme="@style/Login">
+            android:theme="@style/GalacticMerchants.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

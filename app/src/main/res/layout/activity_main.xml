@@ -19,6 +19,7 @@
         app:itemBackground="@color/blue"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
+        app:labelVisibilityMode="selected"
         app:menu="@menu/bottom_nav_menu" />
 
     <fragment
