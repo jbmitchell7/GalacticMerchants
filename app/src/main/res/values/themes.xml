@@ -30,6 +30,7 @@
     <style name="Main" parent="@style/Theme.AppCompat.DayNight.DarkActionBar">
         <!-- sets colors -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/black_theme</item>
+        <item name="colorPrimary">@color/black_theme</item>
         <item name="android:windowBackground">@color/black_theme</item>
         <item name="android:textColor">@color/yellow</item>
     </style>

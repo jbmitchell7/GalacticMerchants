@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import cloud.jakemitchell.galacticmerchants.MainActivity
 import cloud.jakemitchell.galacticmerchants.R
+import cloud.jakemitchell.galacticmerchants.network.SpaceTradersApi
 import cloud.jakemitchell.galacticmerchants.network.data.GameStatus
 
 class LoginActivity : AppCompatActivity() {
@@ -41,9 +42,11 @@ class LoginActivity : AppCompatActivity() {
             val edit = pref.edit()
             val loginBtn = findViewById<Button>(R.id.login)
             loginBtn.setOnClickListener {
+                //SpaceTradersApi.retrofitService.createUsername()
                 edit.putString("TOKEN", tokenText.text.toString())
                 edit.putString("USER", userText.text.toString())
                 edit.apply()
+                //navigate to home screen
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }

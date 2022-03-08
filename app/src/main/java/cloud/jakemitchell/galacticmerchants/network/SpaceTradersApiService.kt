@@ -6,10 +6,12 @@ import cloud.jakemitchell.galacticmerchants.network.data.Ship
 import cloud.jakemitchell.galacticmerchants.network.data.UserData
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 private const val API_URL =
     "https://api.spacetraders.io"
@@ -36,8 +38,8 @@ interface SpaceTradersApiService {
     @GET("my/ships/{shipId}")
     suspend fun getOneShip(): Ship
 
-    @POST("/users/{username}/claim")
-    suspend fun createUsername(): List<UserData>
+//    @POST("/users/{username}/claim")
+//    Call<List<UserData>> createUsername(@Path("username") String username);
 }
 
 object SpaceTradersApi {

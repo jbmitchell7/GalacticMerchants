@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Jake/Documents/github/galacticmerchants/app/src/main/res/layout/activity_main.xml" value="0.240625" />
+        <entry key="..\:/Users/Jake/Documents/github/galacticmerchants/app/src/main/res/menu/bottom_nav_menu.xml" value="0.240625" />
         <entry key="app/src/main/res/layout/activity_account.xml" value="0.11119554204660588" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.23177083333333334" />
