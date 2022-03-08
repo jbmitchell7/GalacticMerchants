@@ -17,6 +17,8 @@
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
             android:text="@string/login_welcome"
+            android:textSize="30sp"
+            android:textAlignment="center"
             android:fontFamily="sans-serif-black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,15 +58,25 @@
             android:layout_marginHorizontal="20dp"
             android:autofillHints="token" />
 
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:layout_marginTop="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/access_token"/>
+
         <Button
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/access_token"
+            app:layout_constraintTop_toBottomOf="@+id/status_text"
             android:text="@string/action_sign_in"
             android:textColor="@color/white"
             android:backgroundTint="@color/blue"/>
