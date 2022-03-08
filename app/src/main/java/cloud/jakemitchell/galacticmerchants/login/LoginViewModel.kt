@@ -1,4 +1,4 @@
-package cloud.jakemitchell.galacticmerchants.ui.login
+package cloud.jakemitchell.galacticmerchants.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 import java.lang.Exception
 
 class LoginViewModel : ViewModel() {
+
     private val _gameStatus = MutableLiveData<GameStatus>()
 
     val gameStatus: LiveData<GameStatus> = _gameStatus

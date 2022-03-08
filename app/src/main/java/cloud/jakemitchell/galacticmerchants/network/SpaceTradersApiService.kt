@@ -1,6 +1,9 @@
 package cloud.jakemitchell.galacticmerchants.network
 
-import cloud.jakemitchell.galacticmerchants.network.data.*
+import cloud.jakemitchell.galacticmerchants.network.data.GameStatus
+import cloud.jakemitchell.galacticmerchants.network.data.Loan
+import cloud.jakemitchell.galacticmerchants.network.data.Ship
+import cloud.jakemitchell.galacticmerchants.network.data.UserData
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -23,9 +26,6 @@ private val retrofit = Retrofit.Builder()
 interface SpaceTradersApiService {
     @GET("/game/status")
     suspend fun getGameStatus(): GameStatus
-
-    @GET("/my/account")
-    suspend fun getAccount(): User
 
     @GET("/my/loans")
     suspend fun getLoans(): List<Loan>
