@@ -1,17 +1,11 @@
 package cloud.jakemitchell.galacticmerchants.network
 
-import cloud.jakemitchell.galacticmerchants.network.data.GameStatus
-import cloud.jakemitchell.galacticmerchants.network.data.Loan
-import cloud.jakemitchell.galacticmerchants.network.data.Ship
-import cloud.jakemitchell.galacticmerchants.network.data.UserData
+import cloud.jakemitchell.galacticmerchants.network.data.*
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
 
 private const val API_URL =
     "https://api.spacetraders.io"
@@ -29,8 +23,11 @@ interface SpaceTradersApiService {
     @GET("/game/status")
     suspend fun getGameStatus(): GameStatus
 
+    @GET("/game/leaderboard/net-worth")
+    suspend fun getLeaderboard(): Leaderboard
+
     @GET("/my/loans")
-    suspend fun getLoans(): List<Loan>
+    suspend fun getLoans(): List<ActiveLoan>
 
     @GET("/my/ships")
     suspend fun getMyShips(): List<Ship>

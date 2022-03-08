@@ -1,6 +1,6 @@
 package cloud.jakemitchell.galacticmerchants.network.data
 
-data class UserData(
+data class LoginData(
     val token: String,
     val user: User
 )
