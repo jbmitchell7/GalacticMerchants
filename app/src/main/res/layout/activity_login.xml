@@ -9,20 +9,18 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingBottom="@dimen/activity_vertical_margin"
-        tools:context=".login.LoginViewModel"
-        android:background="@color/black_theme">
+        tools:context=".login.LoginViewModel">
 
         <TextView
             android:id="@+id/greeting_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
-            android:text="Welcome to Galactic Merchants"
+            android:text="@string/login_welcome"
             android:fontFamily="sans-serif-black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@color/yellow"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <EditText
             android:id="@+id/crew_name"
@@ -30,9 +28,10 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:layout_marginTop="100dp"
-            android:hint="Name of your Crew"
+            android:hint="@string/login_username_hint"
             android:inputType="text"
             android:selectAllOnFocus="true"
+            android:autofillHints="username"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/greeting_text"
@@ -44,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="Access Token"
+            android:hint="@string/login_token_hint"
             android:imeActionLabel="@string/action_sign_in_short"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
@@ -54,7 +53,8 @@
             app:layout_constraintTop_toBottomOf="@+id/crew_name"
             android:background="@color/white"
             android:padding="15dp"
-            android:layout_marginHorizontal="20dp"/>
+            android:layout_marginHorizontal="20dp"
+            android:autofillHints="token" />
 
         <Button
             android:id="@+id/login"
@@ -65,7 +65,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/access_token"
-            android:text="Click me"
+            android:text="@string/action_sign_in"
             android:textColor="@color/white"
             android:backgroundTint="@color/blue"/>
 

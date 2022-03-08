@@ -14,10 +14,11 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:label="@string/title_activity_dashboard" />
+            android:label="@string/title_activity_main"/>
         <activity
             android:name=".login.LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
