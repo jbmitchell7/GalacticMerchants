@@ -30,10 +30,10 @@ interface SpaceTradersApiService {
     suspend fun getLoans(): List<ActiveLoan>
 
     @GET("/my/ships")
-    suspend fun getMyShips(): List<Ship>
+    suspend fun getMyShips(): List<OwnedShip>
 
     @GET("my/ships/{shipId}")
-    suspend fun getOneShip(): Ship
+    suspend fun getOneShip(): OwnedShip
 
 //    @POST("/users/{username}/claim")
 //    Call<List<UserData>> createUsername(@Path("username") String username);
