@@ -1,5 +1,6 @@
 package cloud.jakemitchell.galacticmerchants.ui.dashboard
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +11,6 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import cloud.jakemitchell.galacticmerchants.MainActivity
 import cloud.jakemitchell.galacticmerchants.databinding.FragmentDashboardBinding
 import cloud.jakemitchell.galacticmerchants.login.LoginActivity
 
@@ -20,6 +20,7 @@ class DashboardFragment : Fragment() {
 
     private val binding get() = _binding!!
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,14 +31,21 @@ class DashboardFragment : Fragment() {
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-
-        val pref = activity?.getSharedPreferences("AUTHDATA", Context.MODE_PRIVATE)
         val intent = Intent(activity, LoginActivity::class.java)
+        val pref = activity?.getSharedPreferences("AUTHDATA", Context.MODE_PRIVATE)
+        val token = pref?.getString("TOKEN", "")
+
+        dashboardViewModel.viewAccount(token.toString())
+        val userName: TextView = binding.textUsername
+        val shipCount: TextView = binding.textShipCount
+        val structureCount: TextView = binding.textStructureCount
+        val credits: TextView = binding.textCredits
+        dashboardViewModel.accountInfo.observe(viewLifecycleOwner) {
+            userName.text = "Username: ${it.user.username}"
+            credits.text = "Credits: ${it.user.credits}"
+            shipCount.text = "Number of Ships: ${it.user.shipCount}"
+            structureCount.text = "Number of Structures: ${it.user.structureCount}"
+        }
 
         val logoutButton: Button = binding.logoutBtn
         logoutButton.setOnClickListener {
