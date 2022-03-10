@@ -11,14 +11,16 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import cloud.jakemitchell.galacticmerchants.databinding.FragmentDashboardBinding
 import cloud.jakemitchell.galacticmerchants.login.LoginActivity
+import cloud.jakemitchell.galacticmerchants.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
 
     private val binding get() = _binding!!
+
+    private val pref = activity?.getSharedPreferences("AUTHDATA", Context.MODE_PRIVATE)
 
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
@@ -32,10 +34,7 @@ class DashboardFragment : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
         val intent = Intent(activity, LoginActivity::class.java)
-        val pref = activity?.getSharedPreferences("AUTHDATA", Context.MODE_PRIVATE)
-        val token = pref?.getString("TOKEN", "")
 
-        dashboardViewModel.viewAccount(token.toString())
         val userName: TextView = binding.textUsername
         val shipCount: TextView = binding.textShipCount
         val structureCount: TextView = binding.textStructureCount

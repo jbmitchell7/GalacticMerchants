@@ -1,24 +1,26 @@
 package cloud.jakemitchell.galacticmerchants.ui.dashboard
 
+import android.app.Application
 import android.content.Context
-import androidx.activity.viewModels
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import cloud.jakemitchell.galacticmerchants.MainActivity
-import cloud.jakemitchell.galacticmerchants.login.LoginViewModel
+import androidx.lifecycle.*
 import cloud.jakemitchell.galacticmerchants.network.SpaceTradersApi
 import cloud.jakemitchell.galacticmerchants.network.data.User
 import cloud.jakemitchell.galacticmerchants.network.data.UserData
 import kotlinx.coroutines.launch
 
-class DashboardViewModel : ViewModel() {
+class DashboardViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _accountInfo = MutableLiveData<User>()
     val accountInfo: LiveData<User> = _accountInfo
 
-    fun viewAccount(auth: String) {
+    private val pref = application.getSharedPreferences("AUTHDATA", Context.MODE_PRIVATE)
+    private val token = pref.getString("TOKEN", "")
+
+    init {
+        viewAccount(token)
+    }
+
+    fun viewAccount(auth: String?) {
         viewModelScope.launch {
             try {
                 val response = SpaceTradersApi.retrofitService.getAccount(auth)

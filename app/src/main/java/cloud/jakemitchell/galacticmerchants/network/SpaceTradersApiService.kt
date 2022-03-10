@@ -38,7 +38,11 @@ interface SpaceTradersApiService {
     suspend fun getLeaderboard(): Leaderboard
 
     @GET("/my/loans")
-    suspend fun getLoans(): List<ActiveLoan>
+    suspend fun getMyLoans(): List<ActiveLoan>
+
+    @GET("/types/loans")
+    suspend fun getAvailableLoans(
+        @Header("Authorization") authorization: String?): List<AvailableLoan>
 
     @GET("/my/ships")
     suspend fun getMyShips(): List<OwnedShip>
@@ -47,7 +51,7 @@ interface SpaceTradersApiService {
     suspend fun getOneShip(): OwnedShip
 
     @GET("my/account")
-    suspend fun getAccount(@Header("Authorization") authorization: String): User
+    suspend fun getAccount(@Header("Authorization") authorization: String?): User
 
     @POST("/users/{username}/claim")
     suspend fun createUsername(@Path("username") username: String): LoginData

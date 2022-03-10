@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="loan"
+            type="cloud.jakemitchell.galacticmerchants.network.data.AvailableLoan" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+    android:id="@+id/loan_card_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/loan_card_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{loan.amount}"/>
+            <TextView
+                android:id="@+id/loan_card_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{loan.rate}"/>
+            <TextView
+                android:id="@+id/loan_card_term"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{loan.type}"/>
+            <TextView
+                android:id="@+id/loan_card_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{loan.termInDays}"/>
+            <Button
+                android:id="@+id/take_loan_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Take"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

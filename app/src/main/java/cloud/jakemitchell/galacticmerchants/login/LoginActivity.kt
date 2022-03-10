@@ -80,7 +80,7 @@ class LoginActivity : AppCompatActivity() {
 
         val accountObserver = Observer<User> { account ->
             if(account.user.username.isNotEmpty()) {
-                edit.putString("TOKEN", tokenText.text.toString())
+                edit.putString("TOKEN", "Bearer ${tokenText.text}")
                 edit.putString("USER", account.user.username)
                 edit.apply()
                 startActivity(intent)
