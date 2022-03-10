@@ -20,14 +20,16 @@ class DashboardFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    private val pref = activity?.getSharedPreferences("AUTHDATA", Context.MODE_PRIVATE)
-
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        //initialize shared preferences
+        val pref = activity?.getSharedPreferences("AUTHDATA", Context.MODE_PRIVATE)
+        val edit = pref?.edit()
+        //set view model
         val dashboardViewModel =
             ViewModelProvider(this)[DashboardViewModel::class.java]
 
@@ -48,15 +50,12 @@ class DashboardFragment : Fragment() {
 
         val logoutButton: Button = binding.logoutBtn
         logoutButton.setOnClickListener {
-            if (pref != null) {
-                with (pref.edit()) {
-                    putString("TOKEN", "")
-                    putString("USER", "")
-                    apply()
-                }
-                startActivity(intent)
-                activity?.finish()
-            }
+            edit?.putString("TOKEN", "")
+            edit?.putString("USER", "")
+            edit?.apply()
+
+            startActivity(intent)
+            activity?.finish()
         }
         return root
     }

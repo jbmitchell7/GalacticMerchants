@@ -42,7 +42,7 @@ interface SpaceTradersApiService {
 
     @GET("/types/loans")
     suspend fun getAvailableLoans(
-        @Header("Authorization") authorization: String?): List<AvailableLoan>
+        @Header("Authorization") authorization: String?): AvailableLoans
 
     @GET("/my/ships")
     suspend fun getMyShips(): List<OwnedShip>

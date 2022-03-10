@@ -10,3 +10,7 @@ data class AvailableLoan(
     val termInDays: Int,
     val type: String
 )
+
+data class AvailableLoans(
+    val loans: List<AvailableLoan>
+)
