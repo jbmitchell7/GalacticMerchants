@@ -31,12 +31,17 @@
                 android:layout_height="wrap_content"
                 android:text="@{Integer.toString(loan.rate)}"/>
             <TextView
-                android:id="@+id/loan_card_term"
+                android:id="@+id/loan_card_collateral"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{Boolean.toString(loan.collateralRequired)}"/>
+            <TextView
+                android:id="@+id/loan_card_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{loan.type}"/>
             <TextView
-                android:id="@+id/loan_card_type"
+                android:id="@+id/loan_card_term"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{Integer.toString(loan.termInDays)}"/>
