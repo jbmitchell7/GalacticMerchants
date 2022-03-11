@@ -27,6 +27,7 @@ class LoansFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.loansViewModel= loansViewModel
         binding.loanCardList.adapter = LoansAdapter()
+
         return root
     }
 }

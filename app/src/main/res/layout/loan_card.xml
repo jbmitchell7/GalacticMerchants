@@ -7,6 +7,9 @@
         <variable
             name="loan"
             type="cloud.jakemitchell.galacticmerchants.network.data.AvailableLoan" />
+        <variable
+            name="takeLoanBtn"
+            type="android.widget.Button" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

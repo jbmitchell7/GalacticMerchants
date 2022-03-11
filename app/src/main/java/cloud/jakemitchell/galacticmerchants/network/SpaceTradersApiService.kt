@@ -55,6 +55,11 @@ interface SpaceTradersApiService {
 
     @POST("/users/{username}/claim")
     suspend fun createUsername(@Path("username") username: String): LoginData
+
+    @POST("/my/loans")
+    suspend fun takeLoan(
+        @Header("Authorization") authorization: String?,
+        @Body type: String): LoanReceipt
 }
 
 object SpaceTradersApi {

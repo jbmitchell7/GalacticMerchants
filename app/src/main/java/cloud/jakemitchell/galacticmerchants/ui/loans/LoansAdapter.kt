@@ -2,6 +2,7 @@ package cloud.jakemitchell.galacticmerchants.ui.loans
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,7 @@ class LoansAdapter : ListAdapter<AvailableLoan, LoansAdapter.LoansViewHolder>(Di
         private var binding: LoanCardBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(availableLoan: AvailableLoan) {
+            val loanBtn: Button = binding.takeLoanBtn
             binding.loan = availableLoan
             binding.executePendingBindings()
         }
