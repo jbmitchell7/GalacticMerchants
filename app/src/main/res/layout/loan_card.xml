@@ -8,8 +8,8 @@
             name="loan"
             type="cloud.jakemitchell.galacticmerchants.network.data.AvailableLoan" />
         <variable
-            name="takeLoanBtn"
-            type="android.widget.Button" />
+            name="loansViewModel"
+            type="cloud.jakemitchell.galacticmerchants.ui.loans.LoansViewModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -53,8 +53,7 @@
                 android:id="@+id/take_loan_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Take" />
-
+                android:text="Take"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

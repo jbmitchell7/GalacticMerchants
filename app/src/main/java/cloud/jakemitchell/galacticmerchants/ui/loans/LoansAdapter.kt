@@ -2,20 +2,19 @@ package cloud.jakemitchell.galacticmerchants.ui.loans
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import cloud.jakemitchell.galacticmerchants.databinding.LoanCardBinding
 import cloud.jakemitchell.galacticmerchants.network.data.AvailableLoan
 
-class LoansAdapter : ListAdapter<AvailableLoan, LoansAdapter.LoansViewHolder>(DiffCallback) {
+class LoansAdapter() :
+    ListAdapter<AvailableLoan, LoansAdapter.LoansViewHolder>(DiffCallback) {
 
     class LoansViewHolder(
         private var binding: LoanCardBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(availableLoan: AvailableLoan) {
-            val loanBtn: Button = binding.takeLoanBtn
             binding.loan = availableLoan
             binding.executePendingBindings()
         }

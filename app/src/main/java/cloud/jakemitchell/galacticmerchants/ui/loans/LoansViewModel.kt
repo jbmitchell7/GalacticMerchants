@@ -18,7 +18,7 @@ class LoansViewModel(application: Application) : AndroidViewModel(application) {
     val takenLoans: LiveData<LoanReceipt> = _takenLoans
 
     private val pref = application.getSharedPreferences("AUTHDATA", Context.MODE_PRIVATE)
-    private val token = pref.getString("TOKEN", "")
+    val token = pref.getString("TOKEN", "")
 
     init {
         viewAvailableLoans(token)
