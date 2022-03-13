@@ -19,6 +19,7 @@ class LoansFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         val loansViewModel =
             ViewModelProvider(this)[LoansViewModel::class.java]
 
@@ -26,7 +27,9 @@ class LoansFragment : Fragment() {
         val root: View = binding.root
         binding.lifecycleOwner = this
         binding.loansViewModel= loansViewModel
-        binding.loanCardList.adapter = LoansAdapter()
+        binding.loanCardList.adapter = LoansAdapter { loan ->
+            loansViewModel.takeOutLoan(loansViewModel.token, loan.type)
+        }
 
         return root
     }

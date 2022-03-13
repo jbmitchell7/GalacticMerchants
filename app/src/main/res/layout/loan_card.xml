@@ -7,9 +7,6 @@
         <variable
             name="loan"
             type="cloud.jakemitchell.galacticmerchants.network.data.AvailableLoan" />
-        <variable
-            name="loansViewModel"
-            type="cloud.jakemitchell.galacticmerchants.ui.loans.LoansViewModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

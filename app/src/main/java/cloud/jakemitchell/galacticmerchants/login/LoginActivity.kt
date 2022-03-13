@@ -67,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
         val loginObserver = Observer<LoginData> { authData ->
             if(authData.token.isNotEmpty()) {
                 //sets input to shared preferences
-                edit.putString("TOKEN", authData.token)
+                edit.putString("TOKEN", "Bearer ${authData.token}")
                 edit.putString("USER", userText.text.toString())
                 edit.apply()
                 //navigate to home screen

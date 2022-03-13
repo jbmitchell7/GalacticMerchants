@@ -59,7 +59,7 @@ interface SpaceTradersApiService {
     @POST("/my/loans")
     suspend fun takeLoan(
         @Header("Authorization") authorization: String?,
-        @Body type: String): LoanReceipt
+        @Query ("type") type: String): LoanReceipt
 }
 
 object SpaceTradersApi {

@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import cloud.jakemitchell.galacticmerchants.databinding.LoanCardBinding
 import cloud.jakemitchell.galacticmerchants.network.data.AvailableLoan
 
-class LoansAdapter() :
+class LoansAdapter(private val onSelect: (AvailableLoan) -> Unit) :
     ListAdapter<AvailableLoan, LoansAdapter.LoansViewHolder>(DiffCallback) {
 
     class LoansViewHolder(
-        private var binding: LoanCardBinding
+        val binding: LoanCardBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(availableLoan: AvailableLoan) {
             binding.loan = availableLoan
@@ -39,6 +39,9 @@ class LoansAdapter() :
     override fun onBindViewHolder(holder: LoansViewHolder, position: Int) {
         val loan = getItem(position)
         holder.bind(loan)
+        holder.binding.takeLoanBtn.setOnClickListener{
+            onSelect(loan)
+        }
     }
 
 }

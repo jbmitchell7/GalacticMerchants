@@ -15,7 +15,7 @@ class LoansViewModel(application: Application) : AndroidViewModel(application) {
     val loans: LiveData<AvailableLoans> = _loans
 
     private val _takenLoans = MutableLiveData<LoanReceipt>()
-    val takenLoans: LiveData<LoanReceipt> = _takenLoans
+    private val takenLoans: LiveData<LoanReceipt> = _takenLoans
 
     private val pref = application.getSharedPreferences("AUTHDATA", Context.MODE_PRIVATE)
     val token = pref.getString("TOKEN", "")
@@ -40,6 +40,7 @@ class LoansViewModel(application: Application) : AndroidViewModel(application) {
             try {
                 val response = SpaceTradersApi.retrofitService.takeLoan(auth, loanType)
                 _takenLoans.value = response
+                println(takenLoans)
             } catch (e: Exception) {
                 println("failed to take out loan")
             }
