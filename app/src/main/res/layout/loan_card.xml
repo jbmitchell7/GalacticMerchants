@@ -9,48 +9,67 @@
             type="cloud.jakemitchell.galacticmerchants.network.data.AvailableLoan" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView
-    android:id="@+id/loan_card_item"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    tools:ignore="MissingConstraints">
-
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/loan_card_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/loan_card_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{Integer.toString(loan.amount)}"/>
-            <TextView
-                android:id="@+id/loan_card_rate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{Integer.toString(loan.rate)}"/>
-            <TextView
-                android:id="@+id/loan_card_collateral"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{Boolean.toString(loan.collateralRequired)}"/>
-            <TextView
-                android:id="@+id/loan_card_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{loan.type}"/>
-            <TextView
-                android:id="@+id/loan_card_term"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{Integer.toString(loan.termInDays)}"/>
+            android:layout_margin="8dp">
 
-            <Button
-                android:id="@+id/take_loan_btn"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_height="wrap_content"
-                android:text="Take"/>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+                android:layout_width="match_parent">
+
+                <LinearLayout
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/loan_card_text"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/loan_card_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="amount"/>
+                    <TextView
+                        android:id="@+id/loan_card_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/loan_card_amount"
+                        android:text="rate"/>
+                    <TextView
+                        android:id="@+id/loan_card_collateral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/loan_card_rate"
+                        android:text="collateral"/>
+                    <TextView
+                        android:id="@+id/loan_card_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/loan_card_collateral"
+                        android:text="type"/>
+                    <TextView
+                        android:id="@+id/loan_card_term"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/loan_card_type"
+                        android:text="term"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/take_loan_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Take"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/loan_card_text"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
 </layout>

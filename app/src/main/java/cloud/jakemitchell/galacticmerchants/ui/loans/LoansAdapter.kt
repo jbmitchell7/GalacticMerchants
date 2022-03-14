@@ -1,5 +1,6 @@
 package cloud.jakemitchell.galacticmerchants.ui.loans
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -36,9 +37,14 @@ class LoansAdapter(private val onSelect: (AvailableLoan) -> Unit) :
         )
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: LoansViewHolder, position: Int) {
         val loan = getItem(position)
-        holder.bind(loan)
+        holder.binding.loanCardAmount.text = "Loan Amount: $${loan.amount}"
+        holder.binding.loanCardCollateral.text = "Collateral Required? ${loan.collateralRequired}"
+        holder.binding.loanCardRate.text = "Loan Rate: ${loan.rate}"
+        holder.binding.loanCardTerm.text = "Term: ${loan.termInDays}"
+        holder.binding.loanCardType.text = "Type of Loan: ${loan.type}"
         holder.binding.takeLoanBtn.setOnClickListener{
             onSelect(loan)
         }
