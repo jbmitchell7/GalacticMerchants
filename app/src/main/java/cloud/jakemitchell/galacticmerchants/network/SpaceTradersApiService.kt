@@ -47,8 +47,13 @@ interface SpaceTradersApiService {
     @GET("/my/ships")
     suspend fun getMyShips(): List<OwnedShip>
 
-    @GET("my/ships/{shipId}")
+    @GET("/my/ships/{shipId}")
     suspend fun getOneShip(): OwnedShip
+
+    @GET("/systems/{symbol}/locations")
+    suspend fun getSystemLocations(
+        @Header("Authorization") authorization: String?,
+        @Path("symbol") symbol: String): SystemLocations
 
     @GET("my/account")
     suspend fun getAccount(@Header("Authorization") authorization: String?): User

@@ -24,10 +24,10 @@ class SystemsFragment : Fragment() {
 
         _binding = FragmentSystemsBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        val textView: TextView = binding.textSystems
-        systemsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        binding.lifecycleOwner = this
+        binding.systemsViewModel = systemsViewModel
+        binding.locationCardList.adapter = SystemsAdapter { location ->
+            systemsViewModel.viewSystemLocations(systemsViewModel.token, "OE")
         }
         return root
     }
